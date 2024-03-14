@@ -4,9 +4,8 @@
     
     <groupId>id.ineal.util</groupId>
     <artifactId>core</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <name>core</name>
-    <url>http://maven.apache.org</url>
     <packaging>jar</packaging>
 
     <properties>
@@ -39,6 +38,14 @@
         </dependency>
 
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>Ineal Utility</name>
+            <url>https://maven.pkg.github.com/inealx/core</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>

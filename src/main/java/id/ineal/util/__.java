@@ -75,21 +75,20 @@ public class __ {
 
     public static String base64Encode(String val) {
         try {
-            byte[] v = val.getBytes(StandardCharsets.US_ASCII);
-            return new String(Base64.getEncoder().encode(v));
-        } catch(NullPointerException ignored) {
+            byte[] v = val.getBytes(StandardCharsets.UTF_8); 
+            return Base64.getEncoder().encodeToString(v);
+        } catch (NullPointerException | IllegalArgumentException ex) {
             return null;
         }
     }
 
     public static String base64Decode(String val) {
         try {
-            byte[] v = val.getBytes(StandardCharsets.US_ASCII);
+            byte[] v = val.getBytes(StandardCharsets.UTF_8);
             return new String(Base64.getDecoder().decode(v));
-        } catch(NullPointerException ignored) {
+        } catch (NullPointerException | IllegalArgumentException ex) {
             return null;
         }
-        
     }
 
     public static int toInt(Object val) {
